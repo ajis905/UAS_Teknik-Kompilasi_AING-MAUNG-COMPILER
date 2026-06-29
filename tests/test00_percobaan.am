@@ -1,0 +1,248 @@
+Input : 
+ 
+gawe tambah(a,b){
+    balikeun a+b
+}
+
+gawe main(){
+
+    ngomong("=== Ujian Akhir AING MAUNG ===")
+
+    angka_awal = 1
+
+    salila(angka_awal <= 3){
+
+        ngomong("Iterasi ke-")
+        ngomong(angka_awal)
+
+        angka_awal = angka_awal + 1
+    }
+
+    tes_optimasi = 10 * 5 + 2
+
+    lamun(tes_optimasi > 50){
+
+        ngomong("Optimasi Matematika Berhasil!")
+
+    } sanesna {
+
+        ngomong("Gagal Optimasi")
+    }
+
+    hasil = tambah(10,20)
+
+    ngomong("Hasil Tambah:")
+    ngomong(hasil)
+
+}
+
+main()
+
+
+Output :
+
+========================================
+      AING MAUNG COMPILER v1.0
+    Basa Sunda Kasar Programming
+========================================
+
+
+=== PARSE TREE ===
+
+└── Program
+    ├── Function
+    │   ├── NAME
+    │   ├── PARAMETERS
+    │   │   ├── PARAM
+    │   │   └── PARAM
+    │   └── BODY
+    │       └── RETURN
+    │           └── VALUE
+    ├── Function Call
+    │   ├── NAME
+    │   └── ARG
+    ├── Assignment
+    │   ├── IDENTIFIER
+    │   └── VALUE
+    ├── Function Call
+    │   ├── NAME
+    │   └── ARG
+    ├── Function Call
+    │   ├── NAME
+    │   └── ARG
+    ├── Assignment
+    │   ├── IDENTIFIER
+    │   └── VALUE
+    ├── WHILE
+    │   ├── Condition
+    │   └── Body
+    │       ├── CallNode
+    │       ├── CallNode
+    │       └── AssignNode
+    ├── Assignment
+    │   ├── IDENTIFIER
+    │   └── VALUE
+    ├── Function Call
+    │   ├── NAME
+    │   └── ARG
+    ├── IF
+    │   ├── Condition
+    │   └── Body
+    │       └── CallNode
+    ├── Function Call
+    │   ├── NAME
+    │   └── ARG
+    ├── Assignment
+    │   ├── IDENTIFIER
+    │   └── VALUE
+    ├── Function Call
+    │   ├── NAME
+    │   └── ARG
+    ├── Function Call
+    │   ├── NAME
+    │   └── ARG
+    └── Function
+        ├── NAME
+        ├── PARAMETERS
+        └── BODY
+            ├── CallNode
+            ├── AssignNode
+            ├── WhileNode
+            ├── AssignNode
+            ├── IfNode
+            ├── ElseNode
+            ├── AssignNode
+            ├── CallNode
+            └── CallNode
+
+=== ABSTRACT SYNTAX TREE ===
+
+FunctionNode
+├── Name : tambah
+├── Parameters
+│   └── a
+│   └── b
+└── Body
+    ReturnNode
+    └── Value
+        BinaryOpNode
+        ├── Left  : a
+        ├── Op    : +
+        └── Right : b
+FunctionNode
+├── Name : main
+├── Parameters
+│   (none)
+└── Body
+    CallNode
+    ├── Name : ngomong
+    └── Arg  : StringNode("=== Ujian Akhir AING MAUNG ===")
+
+    AssignNode
+    ├── Name  : angka_awal
+    └── Value : 1
+
+    WhileNode
+    ├── Condition
+    │   ├── Left  : angka_awal
+    │   ├── Op    : <=
+    │   └── Right : 3
+    └── Body
+        CallNode
+        ├── Name : ngomong
+        └── Arg  : StringNode("Iterasi ke-")
+
+        CallNode
+        ├── Name : ngomong
+        └── Arg  : angka_awal
+
+        AssignNode
+        ├── Name  : angka_awal
+        └── Value
+            BinaryOpNode
+            ├── Left  : angka_awal
+            ├── Op    : +
+            └── Right : 1
+
+    AssignNode
+    ├── Name  : tes_optimasi
+    └── Value
+        BinaryOpNode
+        ├── Left
+        │   BinaryOpNode
+        │   ├── Left  : 10
+        │   ├── Op    : *
+        │   └── Right : 5
+        ├── Op    : +
+        └── Right : 2
+
+    IfNode
+    ├── Condition
+    │   ├── Left  : tes_optimasi
+    │   ├── Op    : >
+    │   └── Right : 50
+    └── Body
+        CallNode
+        ├── Name : ngomong
+        └── Arg  : StringNode("Optimasi Matematika Berhasil!")
+
+    ElseNode
+    └── Body
+        CallNode
+        ├── Name : ngomong
+        └── Arg  : StringNode("Gagal Optimasi")
+
+    AssignNode
+    ├── Name  : hasil
+    └── Value : CallNode(name=tambah, args=[10, 20])
+
+    CallNode
+    ├── Name : ngomong
+    └── Arg  : StringNode("Hasil Tambah:")
+
+    CallNode
+    ├── Name : ngomong
+    └── Arg  : hasil
+
+CallNode
+├── Name : main
+
+
+Semantic Analysis Berhasil!
+
+=== GENERATED PYTHON ===
+
+def tambah(a, b):
+    return (a + b)
+def main():
+    print("=== Ujian Akhir AING MAUNG ===")
+    angka_awal = 1
+    while angka_awal <= 3:
+        print("Iterasi ke-")
+        print(angka_awal)
+        angka_awal = (angka_awal + 1)
+    tes_optimasi = ((10 * 5) + 2)
+    if tes_optimasi > 50:
+        print("Optimasi Matematika Berhasil!")
+    else:
+        print("Gagal Optimasi")
+    hasil = tambah(10, 20)
+    print("Hasil Tambah:")
+    print(hasil)
+main()
+
+Python code disimpen kana generated.py
+
+=== HASIL EKSEKUSI PROGRAM ===
+
+=== Ujian Akhir AING MAUNG ===
+Iterasi ke-
+1
+Iterasi ke-
+2
+Iterasi ke-
+3
+Optimasi Matematika Berhasil!
+Hasil Tambah:
+30
+PS C:\Users\PLN\.vscode\AingMaung> 

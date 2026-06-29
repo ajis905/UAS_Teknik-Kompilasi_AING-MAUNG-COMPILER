@@ -1,0 +1,37 @@
+gawe tambah(a,b){
+    balikeun a+b
+}
+
+gawe main(){
+
+    ngomong("=== Ujian Akhir AING MAUNG ===")
+
+    angka_awal = 1
+
+    salila(angka_awal <= 3){
+
+        ngomong("Iterasi ke-")
+        ngomong(angka_awal)
+
+        angka_awal = angka_awal + 1
+    }
+
+    tes_optimasi = 10 * 5 + 2
+
+    lamun(tes_optimasi > 50){
+
+        ngomong("Optimasi Matematika Berhasil!")
+
+    } sanesna {
+
+        ngomong("Gagal Optimasi")
+    }
+
+    hasil = tambah(10,20)
+
+    ngomong("Hasil Tambah:")
+    ngomong(hasil)
+
+}
+
+main()

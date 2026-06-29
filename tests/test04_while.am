@@ -1,0 +1,77 @@
+i = 1
+
+salila(i <= 3){
+
+    ngomong(i)
+
+    i = i + 1
+
+}
+
+
+========================================
+      AING MAUNG COMPILER v1.0
+    Basa Sunda Kasar Programming
+========================================
+
+
+=== PARSE TREE ===
+
+└── Program
+    ├── Assignment
+    │   ├── IDENTIFIER
+    │   └── VALUE
+    ├── Function Call
+    │   ├── NAME
+    │   └── ARG
+    ├── Assignment
+    │   ├── IDENTIFIER
+    │   └── VALUE
+    └── WHILE
+        ├── Condition
+        └── Body
+            ├── CallNode
+            └── AssignNode
+
+=== ABSTRACT SYNTAX TREE ===
+
+AssignNode
+├── Name  : i
+└── Value : 1
+
+WhileNode
+├── Condition
+│   ├── Left  : i
+│   ├── Op    : <=
+│   └── Right : 3
+└── Body
+    CallNode
+    ├── Name : ngomong
+    └── Arg  : i
+
+    AssignNode
+    ├── Name  : i
+    └── Value
+        BinaryOpNode
+        ├── Left  : i
+        ├── Op    : +
+        └── Right : 1
+
+
+Semantic Analysis Berhasil!
+
+=== GENERATED PYTHON ===
+
+i = 1
+while i <= 3:
+    print(i)
+    i = (i + 1)
+
+Python code disimpen kana generated.py
+
+=== HASIL EKSEKUSI PROGRAM ===
+
+1
+2
+3
+PS C:\Users\PLN\.vscode\AingMaung> 

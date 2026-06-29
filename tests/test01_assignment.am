@@ -1,0 +1,63 @@
+a = 10
+b = 20
+
+ngomong(a)
+ngomong(b)
+
+========================================
+      AING MAUNG COMPILER v1.0
+    Basa Sunda Kasar Programming
+========================================
+
+
+=== PARSE TREE ===
+
+└── Program
+    ├── Assignment
+    │   ├── IDENTIFIER
+    │   └── VALUE
+    ├── Assignment
+    │   ├── IDENTIFIER
+    │   └── VALUE
+    ├── Function Call
+    │   ├── NAME
+    │   └── ARG
+    └── Function Call
+        ├── NAME
+        └── ARG
+
+=== ABSTRACT SYNTAX TREE ===
+
+AssignNode
+├── Name  : a
+└── Value : 10
+
+AssignNode
+├── Name  : b
+└── Value : 20
+
+CallNode
+├── Name : ngomong
+└── Arg  : a
+
+CallNode
+├── Name : ngomong
+└── Arg  : b
+
+
+Semantic Analysis Berhasil!
+
+=== GENERATED PYTHON ===
+
+a = 10
+b = 20
+print(a)
+print(b)
+
+Python code disimpen kana generated.py
+
+=== HASIL EKSEKUSI PROGRAM ===
+
+10
+20
+PS C:\Users\PLN\.vscode\AingMaung> 

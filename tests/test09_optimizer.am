@@ -1,0 +1,52 @@
+hasil = 10 * 5 + 2
+
+ngomong(hasil)
+
+========================================
+      AING MAUNG COMPILER v1.0
+    Basa Sunda Kasar Programming
+========================================
+
+
+=== PARSE TREE ===
+
+└── Program
+    ├── Assignment
+    │   ├── IDENTIFIER
+    │   └── VALUE
+    └── Function Call
+        ├── NAME
+        └── ARG
+
+=== ABSTRACT SYNTAX TREE ===
+
+AssignNode
+├── Name  : hasil
+└── Value
+    BinaryOpNode
+    ├── Left
+    │   BinaryOpNode
+    │   ├── Left  : 10
+    │   ├── Op    : *
+    │   └── Right : 5
+    ├── Op    : +
+    └── Right : 2
+
+CallNode
+├── Name : ngomong
+└── Arg  : hasil
+
+
+Semantic Analysis Berhasil!
+
+=== GENERATED PYTHON ===
+
+hasil = ((10 * 5) + 2)
+print(hasil)
+
+Python code disimpen kana generated.py
+
+=== HASIL EKSEKUSI PROGRAM ===
+
+52
+PS C:\Users\PLN\.vscode\AingMaung> 

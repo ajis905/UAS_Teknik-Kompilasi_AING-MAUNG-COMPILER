@@ -1,0 +1,83 @@
+angka = [1,2,3]
+
+ngomong(angka)
+
+ngomong(angka[1])
+
+angka[1] = 100
+
+ngomong(angka)
+
+
+========================================
+      AING MAUNG COMPILER v1.0
+    Basa Sunda Kasar Programming
+========================================
+
+
+=== PARSE TREE ===
+
+└── Program
+    ├── Assignment
+    │   ├── IDENTIFIER
+    │   └── VALUE
+    ├── Function Call
+    │   ├── NAME
+    │   └── ARG
+    ├── Function Call
+    │   ├── NAME
+    │   └── ARG
+    ├── Array Assignment
+    │   ├── ARRAY
+    │   ├── INDEX
+    │   └── VALUE
+    └── Function Call
+        ├── NAME
+        └── ARG
+
+=== ABSTRACT SYNTAX TREE ===
+
+AssignNode
+├── Name  : angka
+└── Value
+    ArrayNode
+    ├── 1
+    ├── 2
+    ├── 3
+
+CallNode
+├── Name : ngomong
+└── Arg  : angka
+
+CallNode
+├── Name : ngomong
+└── Arg  : IndexNode(array=angka, index=1)
+
+IndexAssignNode
+├── Array : angka
+├── Index : 1
+└── Value : 100
+
+CallNode
+├── Name : ngomong
+└── Arg  : angka
+
+
+Semantic Analysis Berhasil!
+
+=== GENERATED PYTHON ===
+
+angka = [1, 2, 3]
+print(angka)
+print(angka[1])
+angka[1] = 100
+print(angka)
+
+Python code disimpen kana generated.py
+
+=== HASIL EKSEKUSI PROGRAM ===
+
+[1, 2, 3]
+2
+[1, 100, 3]
+PS C:\Users\PLN\.vscode\AingMaung> 

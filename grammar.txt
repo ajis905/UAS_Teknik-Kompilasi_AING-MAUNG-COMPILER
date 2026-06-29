@@ -1,0 +1,344 @@
+=========================================
+AING MAUNG LANGUAGE GRAMMAR
+Version 1.0
+=========================================
+
+PROGRAM
+
+```
+::= STATEMENT_LIST
+```
+
+---
+
+STATEMENT_LIST
+
+```
+::= STATEMENT STATEMENT_LIST
+
+ | ε
+```
+
+---
+
+STATEMENT
+
+```
+::= ASSIGNMENT
+
+ | ARRAY_ASSIGNMENT
+
+ | PRINT_STATEMENT
+
+ | INPUT_STATEMENT
+
+ | IF_STATEMENT
+
+ | WHILE_STATEMENT
+
+ | FOR_STATEMENT
+
+ | FUNCTION_DEFINITION
+
+ | RETURN_STATEMENT
+
+ | FUNCTION_CALL
+
+ | EXPRESSION
+```
+
+---
+
+ASSIGNMENT
+
+```
+::= IDENTIFIER "=" EXPRESSION
+```
+
+---
+
+ARRAY_ASSIGNMENT
+
+```
+::= IDENTIFIER
+
+    "[" EXPRESSION "]"
+
+    "="
+
+    EXPRESSION
+```
+
+---
+
+PRINT_STATEMENT
+
+```
+::= "ngomong"
+
+    "(" EXPRESSION ")"
+```
+
+---
+
+INPUT_STATEMENT
+
+```
+::= IDENTIFIER
+
+    "="
+
+    "nanya"
+
+    "(" STRING ")"
+```
+
+---
+
+IF_STATEMENT
+
+```
+::= "lamun"
+
+    CONDITION
+
+    BLOCK
+
+ | "lamun"
+
+    CONDITION
+
+    BLOCK
+
+    "sanesna"
+
+    BLOCK
+```
+
+---
+
+WHILE_STATEMENT
+
+```
+::= "salila"
+
+    CONDITION
+
+    BLOCK
+```
+
+---
+
+FOR_STATEMENT
+
+```
+::= "keur"
+
+    IDENTIFIER
+
+    "dina"
+
+    "rentang"
+
+    "(" ARGUMENT_LIST ")"
+
+    BLOCK
+```
+
+---
+
+FUNCTION_DEFINITION
+
+```
+::= "gawe"
+
+    IDENTIFIER
+
+    "(" PARAMETER_LIST ")"
+
+    BLOCK
+```
+
+---
+
+FUNCTION_CALL
+
+```
+::= IDENTIFIER
+
+    "(" ARGUMENT_LIST ")"
+```
+
+---
+
+PARAMETER_LIST
+
+```
+::= IDENTIFIER
+
+ | IDENTIFIER "," PARAMETER_LIST
+
+ | ε
+```
+
+---
+
+ARGUMENT_LIST
+
+```
+::= EXPRESSION
+
+ | EXPRESSION "," ARGUMENT_LIST
+
+ | ε
+```
+
+---
+
+RETURN_STATEMENT
+
+```
+::= "balikkeun"
+
+    EXPRESSION
+```
+
+---
+
+BLOCK
+
+```
+::= "{"
+
+    STATEMENT_LIST
+
+   "}"
+```
+
+---
+
+CONDITION
+
+```
+::= "(" COMPARISON ")"
+```
+
+---
+
+COMPARISON
+
+```
+::= EXPRESSION
+
+    COMPARISON_OPERATOR
+
+    EXPRESSION
+```
+
+---
+
+COMPARISON_OPERATOR
+
+```
+::= "=="
+
+ | "!="
+
+ | ">"
+
+ | "<"
+
+ | ">="
+
+ | "<="
+```
+
+---
+
+EXPRESSION
+
+```
+::= TERM
+
+ | EXPRESSION "+" TERM
+
+ | EXPRESSION "-" TERM
+```
+
+---
+
+TERM
+
+```
+::= FACTOR
+
+ | TERM "*" FACTOR
+
+ | TERM "/" FACTOR
+```
+
+---
+
+FACTOR
+
+```
+::= NUMBER
+
+ | STRING
+
+ | BOOLEAN
+
+ | IDENTIFIER
+
+ | FUNCTION_CALL
+
+ | ARRAY
+
+ | ARRAY_INDEX
+
+ | "(" EXPRESSION ")"
+```
+
+---
+
+ARRAY
+
+```
+::= "[" ELEMENT_LIST "]"
+```
+
+---
+
+ELEMENT_LIST
+
+```
+::= EXPRESSION
+
+ | EXPRESSION "," ELEMENT_LIST
+
+ | ε
+```
+
+---
+
+ARRAY_INDEX
+
+```
+::= IDENTIFIER
+
+    "[" EXPRESSION "]"
+```
+
+---
+
+BOOLEAN
+
+```
+::= "enya"
+
+ | "henteu"
+```
+
+=========================================
+END OF GRAMMAR
+==============

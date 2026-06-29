@@ -1,0 +1,74 @@
+gawe main(){
+
+    keur i dina rentang(5){
+
+        ngomong(i)
+
+    }
+
+}
+
+main()
+
+========================================
+      AING MAUNG COMPILER v1.0
+    Basa Sunda Kasar Programming
+========================================
+
+
+=== PARSE TREE ===
+
+└── Program
+    ├── Function Call
+    │   ├── NAME
+    │   └── ARG
+    ├── FOR
+    │   ├── VARIABLE
+    │   ├── RANGE
+    │   │   └── ARG
+    │   └── BODY
+    │       └── CallNode
+    └── Function
+        ├── NAME
+        ├── PARAMETERS
+        └── BODY
+            └── ForNode
+
+=== ABSTRACT SYNTAX TREE ===
+
+FunctionNode
+├── Name : main
+├── Parameters
+│   (none)
+└── Body
+    ForNode
+    ├── Variable : i
+    ├── Iterable : CallNode(name=rentang, args=[5])
+    └── Body
+        CallNode
+        ├── Name : ngomong
+        └── Arg  : i
+
+CallNode
+├── Name : main
+
+
+Semantic Analysis Berhasil!
+
+=== GENERATED PYTHON ===
+
+def main():
+    for i in range(5):
+        print(i)
+main()
+
+Python code disimpen kana generated.py
+
+=== HASIL EKSEKUSI PROGRAM ===
+
+0
+1
+2
+3
+4
+PS C:\Users\PLN\.vscode\AingMaung> 

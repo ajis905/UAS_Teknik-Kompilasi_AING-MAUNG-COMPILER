@@ -1,0 +1,71 @@
+
+gawe tambah(a,b){
+
+    balikeun a+b
+
+}
+
+gawe tambah(x,y){
+
+    balikeun x-y
+
+}
+
+========================================
+      AING MAUNG COMPILER v1.0
+    Basa Sunda Kasar Programming
+========================================
+
+
+=== PARSE TREE ===
+
+└── Program
+    ├── Function
+    │   ├── NAME
+    │   ├── PARAMETERS
+    │   │   ├── PARAM
+    │   │   └── PARAM
+    │   └── BODY
+    │       └── RETURN
+    │           └── VALUE
+    └── Function
+        ├── NAME
+        ├── PARAMETERS
+        │   ├── PARAM
+        │   └── PARAM
+        └── BODY
+            └── RETURN
+                └── VALUE
+
+=== ABSTRACT SYNTAX TREE ===
+
+FunctionNode
+├── Name : tambah
+├── Parameters
+│   └── a
+│   └── b
+└── Body
+    ReturnNode
+    └── Value
+        BinaryOpNode
+        ├── Left  : a
+        ├── Op    : +
+        └── Right : b
+FunctionNode
+├── Name : tambah
+├── Parameters
+│   └── x
+│   └── y
+└── Body
+    ReturnNode
+    └── Value
+        BinaryOpNode
+        ├── Left  : x
+        ├── Op    : -
+        └── Right : y
+
+========================================
+         COMPILER ERROR
+========================================
+Function 'tambah' geus aya.
+PS C:\Users\PLN\.vscode\AingMaung> 

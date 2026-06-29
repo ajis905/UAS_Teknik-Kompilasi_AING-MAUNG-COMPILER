@@ -1,0 +1,73 @@
+a = 100
+
+lamun(a > 50){
+
+    ngomong("Lulus")
+
+} sanesna {
+
+    ngomong("Gagal")
+
+}
+
+========================================
+      AING MAUNG COMPILER v1.0
+    Basa Sunda Kasar Programming
+========================================
+
+
+=== PARSE TREE ===
+
+└── Program
+    ├── Assignment
+    │   ├── IDENTIFIER
+    │   └── VALUE
+    ├── Function Call
+    │   ├── NAME
+    │   └── ARG
+    ├── IF
+    │   ├── Condition
+    │   └── Body
+    │       └── CallNode
+    └── Function Call
+        ├── NAME
+        └── ARG
+
+=== ABSTRACT SYNTAX TREE ===
+
+AssignNode
+├── Name  : a
+└── Value : 100
+
+IfNode
+├── Condition
+│   ├── Left  : a
+│   ├── Op    : >
+│   └── Right : 50
+└── Body
+    CallNode
+    ├── Name : ngomong
+    └── Arg  : StringNode("Lulus")
+
+ElseNode
+└── Body
+    CallNode
+    ├── Name : ngomong
+    └── Arg  : StringNode("Gagal")
+
+
+Semantic Analysis Berhasil!
+
+=== GENERATED PYTHON ===
+
+a = 100
+if a > 50:
+    print("Lulus")
+else:
+    print("Gagal")
+
+Python code disimpen kana generated.py
+
+=== HASIL EKSEKUSI PROGRAM ===
+
+Lulus

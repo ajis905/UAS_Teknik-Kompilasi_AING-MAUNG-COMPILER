@@ -1,0 +1,72 @@
+gawe tambah(a,b){
+
+    balikeun a+b
+
+}
+
+hasil = tambah(5,7)
+
+ngomong(hasil)
+
+========================================
+      AING MAUNG COMPILER v1.0
+    Basa Sunda Kasar Programming
+========================================
+
+
+=== PARSE TREE ===
+
+└── Program
+    ├── Function
+    │   ├── NAME
+    │   ├── PARAMETERS
+    │   │   ├── PARAM
+    │   │   └── PARAM
+    │   └── BODY
+    │       └── RETURN
+    │           └── VALUE
+    ├── Assignment
+    │   ├── IDENTIFIER
+    │   └── VALUE
+    └── Function Call
+        ├── NAME
+        └── ARG
+
+=== ABSTRACT SYNTAX TREE ===
+
+FunctionNode
+├── Name : tambah
+├── Parameters
+│   └── a
+│   └── b
+└── Body
+    ReturnNode
+    └── Value
+        BinaryOpNode
+        ├── Left  : a
+        ├── Op    : +
+        └── Right : b
+AssignNode
+├── Name  : hasil
+└── Value : CallNode(name=tambah, args=[5, 7])
+
+CallNode
+├── Name : ngomong
+└── Arg  : hasil
+
+
+Semantic Analysis Berhasil!
+
+=== GENERATED PYTHON ===
+
+def tambah(a, b):
+    return (a + b)
+hasil = tambah(5, 7)
+print(hasil)
+
+Python code disimpen kana generated.py
+
+=== HASIL EKSEKUSI PROGRAM ===
+
+12
+PS C:\Users\PLN\.vscode\AingMaung> 
